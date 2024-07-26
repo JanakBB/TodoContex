@@ -13,8 +13,12 @@ const TodoProvider = ({children}) => {
         })
       }
 
+    const deleteApp = (id) => {
+         return setTodos(todos.filter(todo => todo.id !== id));
+    }
+
     return(
-        <TodoContext.Provider value={{todos, addData}}>{children}</TodoContext.Provider>
+        <TodoContext.Provider value={{todos, addData, deleteApp}}>{children}</TodoContext.Provider>
     )
 }
 

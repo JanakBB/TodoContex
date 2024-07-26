@@ -5,20 +5,24 @@ import Header from './components/Header'
 import Input from './components/Input'
 
 function App() {
-  let {todos} = useContext(TodoContext)
+  let {todos, deleteApp} = useContext(TodoContext)
+
+
 
   return (
     <>
-    <h1>Todos</h1>
+      <div className="container">
+      <h4>Todos</h4>
     <Input />
     <Header />
-    <div>
+    <div className='ulSection'>
       {todos.map(todo => (
         <ul>
-          <li>{todo.title}</li>
+          <li key={todo.id}>{todo.title}  </li> <button onClick={() => deleteApp(todo.id)}>delete</button>
         </ul>
       ))}
     </div>
+      </div>
     </>
   )
 }

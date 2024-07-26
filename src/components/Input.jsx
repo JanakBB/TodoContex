@@ -20,7 +20,7 @@ const Input = () => {
     }
 
     return(
-        <div>
+        <div className="inputSection">
         <input 
         type="text" 
         value={inputValue}
